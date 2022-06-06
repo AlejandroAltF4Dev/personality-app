@@ -1,13 +1,16 @@
 <ng-container *ngIf="score; else calculating">
   <div class="flex flex-col gap-8 items-center">
-    <h1>Thank you for taking the survey!</h1>
-    <p>Your personality is: {{score | scoreToResult}}</p>
-    <button nbButton size="giant" [routerLink]="['/home']" (click)="reset()">
+    <img src="assets/illustrations/undraw_instant_analysis_re_mid5.svg" alt="results illustration"
+         class="aspect-video w-full md:w-1/2">
+    <p>Your personality is: <span class="text-2xl font-bold text-orange-600" [ngClass]="{'text-green-600': score >= 3}">{{score | scoreToResult}}</span></p>
+    <h4 class="text-center">Thank you for taking the survey!</h4>
+
+    <button nbButton size="giant" (click)="reset()">
       Repeat
     </button>
   </div>
 
 </ng-container>
 <ng-template #calculating>
-  <nb-spinner message="Calculating" size="giant"></nb-spinner>
+  <nb-spinner message="Calculating" size="giant" status="warning"></nb-spinner>
 </ng-template>

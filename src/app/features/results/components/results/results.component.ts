@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { StoreService } from '../../../../state/store.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-results',
@@ -8,11 +7,12 @@ import { StoreService } from '../../../../state/store.service';
 })
 export class ResultsComponent implements OnInit {
   @Input() score = 0;
-  constructor(private storeService: StoreService) {}
+  @Output() resetSurvey = new EventEmitter();
+  constructor() {}
 
   ngOnInit(): void {}
 
   reset() {
-    this.storeService.resetStore();
+    this.resetSurvey.emit();
   }
 }

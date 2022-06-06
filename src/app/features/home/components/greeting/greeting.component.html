@@ -1,8 +1,15 @@
-<div class="flex flex-col gap-8 items-center">
-  <h1>Welcome!</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam dolorum earum eos fugiat fugit ipsum
-    laborum modi molestiae nisi officia optio perferendis provident quis suscipit, vitae voluptatem, voluptates
-    voluptatum.</p>
+<div class="flex flex-col gap-4 items-center">
+  <img src="assets/illustrations/undraw_customer_survey_re_v9cj.svg" alt="survey illustration"
+       class="aspect-video w-full md:w-1/2">
+  <h5>Welcome!</h5>
+  <nb-card accent="warning">
+    <nb-card-body>
+      <p>Personality tests are predominantly questionnaire based assessments of an individual’s behaviors, motivations,
+        needs, work preferences and communication styles. They are used for personal and team development and, in some
+        instances, some job selection. There are some doubts over the evidence behind many of them.</p>
+      <p class="italic text-sm mt-4">Summary by The World of Work Project</p>
+    </nb-card-body>
+  </nb-card>
 
   <form [formGroup]="userForm" (ngSubmit)="startSurvey()" class="flex flex-col items-center gap-4">
     <p>Enter your name to start the survey:</p>

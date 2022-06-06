@@ -5,6 +5,7 @@
       {
         "number": 1,
         "question": "You’re really busy at work and a colleague is telling you their life story and personal woes. You:",
+        "imageSrc": "/assets/illustrations/undraw_working_re_ddwy.svg",
         "options": [
           {
             "value": 1,
@@ -27,6 +28,7 @@
       {
         "number": 2,
         "question": "You’ve been sitting in the doctor’s waiting room for more than 25 minutes. You:",
+        "imageSrc": "/assets/illustrations/undraw_in_no_time_-6-igu.svg",
         "options": [
           {
             "value": 1,
@@ -49,6 +51,7 @@
       {
         "number": 3,
         "question": "You’re having an animated discussion with a colleague regarding a project that you’re in charge of. You:",
+        "imageSrc": "/assets/illustrations/undraw_public_discussion_re_w9up.svg",
         "options": [
           {
             "value": 1,
@@ -71,6 +74,7 @@
       {
         "number": 4,
         "question": "You are taking part in a guided tour of a museum. You:",
+        "imageSrc": "/assets/illustrations/undraw_art_museum_-8-or4.svg",
         "options": [
           {
             "value": 1,
@@ -93,6 +97,7 @@
       {
         "number": 5,
         "question": "During dinner parties at your home, you have a hard time with people who:",
+        "imageSrc": "/assets/illustrations/undraw_eating_together_re_ux62.svg",
         "options": [
           {
             "value": 1,

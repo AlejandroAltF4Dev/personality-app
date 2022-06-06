@@ -10,6 +10,7 @@ export interface Survey {
 export interface Question {
   number?: number;
   question?: string;
+  imageSrc?: string;
   options?: Option[];
 }
 

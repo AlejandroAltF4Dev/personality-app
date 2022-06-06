@@ -1,6 +1,6 @@
 <div class="flex h-full justify-center items-center">
   <ng-container *ngIf="{score: score$ | async} as viewModel">
-    <app-results [score]="viewModel.score"></app-results>
+    <app-results [score]="viewModel.score" (resetSurvey)="reset()"></app-results>
   </ng-container>
 
 </div>
