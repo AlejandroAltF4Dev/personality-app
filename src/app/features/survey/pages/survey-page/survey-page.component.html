@@ -1,4 +1,7 @@
 <div class="flex h-full justify-center items-center">
-  <app-survey-stepper></app-survey-stepper>
+  <ng-container *ngIf="{survey: survey$ | async} as viewModel">
+    <app-survey-stepper [survey]="viewModel.survey"></app-survey-stepper>
+  </ng-container>
+
 </div>
 

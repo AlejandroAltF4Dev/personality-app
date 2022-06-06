@@ -7,7 +7,7 @@
   <form [formGroup]="userForm" (ngSubmit)="startSurvey()" class="flex flex-col items-center gap-4">
     <p>Enter your name to start the survey:</p>
     <input nbInput size="giant" formControlName="name" type="text"/>
-    <button nbButton size="giant">
+    <button nbButton size="giant" status="primary">
       Start survey
     </button>
   </form>

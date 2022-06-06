@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoggedInGuard } from './shared/guards/logged-in.guard';
 
 const routes: Routes = [
   {
@@ -9,11 +10,13 @@ const routes: Routes = [
   },
   {
     path: 'survey',
+    canLoad: [LoggedInGuard],
     loadChildren: () =>
       import('./features/survey/survey.module').then((m) => m.SurveyModule),
   },
   {
     path: 'results',
+    canLoad: [LoggedInGuard],
     loadChildren: () =>
       import('./features/results/results.module').then((m) => m.ResultsModule),
   },

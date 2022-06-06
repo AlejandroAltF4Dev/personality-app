@@ -1,6 +1,6 @@
 {
   "survey": {
-    "title": "Personality test",
+    "title": "Are you an introvert or an extrovert?",
     "questions": [
       {
         "number": 1,
@@ -87,6 +87,28 @@
           {
             "value": 4,
             "answer": "Are right up the front, adding your own comments in a loud voice"
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "question": "During dinner parties at your home, you have a hard time with people who:",
+        "options": [
+          {
+            "value": 1,
+            "answer": "Ask you to tell a story in front of everyone else"
+          },
+          {
+            "value": 2,
+            "answer": "Talk privately between themselves"
+          },
+          {
+            "value": 3,
+            "answer": "Hang around you all evening"
+          },
+          {
+            "value": 4,
+            "answer": "Always drag the conversation back to themselves"
           }
         ]
       }

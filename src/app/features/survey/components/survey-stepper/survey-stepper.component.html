@@ -1,48 +1,46 @@
-<nb-card>
-  <nb-card-body>
-    <nb-stepper orientation="horizontal">
-      <nb-step [label]="labelOne">
-        <ng-template #labelOne>First step</ng-template>
-        <h4>Step content #1</h4>
-        <p class="lorem">
-          Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down.
-          Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle crocodizzle shut the shizzle up,
-          gravida vizzle, dang.
-        </p>
-        <button nbButton disabled nbStepperNext>prev</button>
-        <button nbButton nbStepperNext>next</button>
-      </nb-step>
-      <nb-step [label]="labelTwo">
-        <ng-template #labelTwo>Second step</ng-template>
-        <h4>Step content #2</h4>
-        <p class="lorem">
-          Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down.
-          Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle crocodizzle shut the shizzle up,
-          gravida vizzle, dang.
-        </p>
-        <button nbButton nbStepperPrevious>prev</button>
-        <button nbButton nbStepperNext>next</button>
-      </nb-step>
-      <nb-step label="Third step">
-        <h4>Step content #3</h4>
-        <p class="lorem">
-          Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down.
-          Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle crocodizzle shut the shizzle up,
-          gravida vizzle, dang.
-        </p>
-        <button nbButton nbStepperPrevious>prev</button>
-        <button nbButton nbStepperNext>next</button>
-      </nb-step>
-      <nb-step [label]="labelFour">
-        <ng-template #labelFour>Fourth step</ng-template>
-        <h4>Step content #4</h4>
-        <p class="lorem">
-          Lorizzle ipsum dolizzle stuff fizzle, consectetuer adipiscing break it down.
-          Nullizzle sapien velizzle, my shizz pimpin', shizzle my nizzle crocodizzle shut the shizzle up,
-          gravida vizzle, dang.
-        </p>
-        <button nbButton nbStepperPrevious [routerLink]="['/results']">End</button>
-      </nb-step>
-    </nb-stepper>
-  </nb-card-body>
-</nb-card>
+<ng-container *ngIf="_survey; else loading">
+  <nb-card>
+    <nb-card-body>
+      <nb-stepper orientation="horizontal" [linear]="true" [disableStepNavigation]="true">
+        <nb-step [label]="label" *ngFor="let question of _survey?.questions; let index = index"
+                 [stepControl]="forms.controls[index]">
+          <ng-template #label>Question {{index + 1}}</ng-template>
+          <nb-card accent="primary">
+            <nb-card-header>
+              <h6>{{question?.question}}</h6>
+            </nb-card-header>
+            <nb-card-body>
+              <form [formGroup]="$any(forms.controls[index])">
+                <nb-radio-group formControlName="value">
+                  <nb-radio
+                    *ngFor="let option of question.options"
+                    [value]="option.value">
+                    {{ option.answer }}
+                  </nb-radio>
+                </nb-radio-group>
+              </form>
+            </nb-card-body>
+            <nb-card-footer>
+              <div class="flex items-center justify-end gap-4">
+                <button nbButton *ngIf="index>0" nbStepperPrevious>prev</button>
+                <button nbButton status="primary" *ngIf="index<_survey.questions.length - 1"
+                        [disabled]="forms.controls[index].invalid" nbStepperNext>next
+                </button>
+                <button nbButton status="success" *ngIf="index === _survey.questions.length - 1"
+                        [disabled]="forms.controls[index].invalid" (click)="goToResults()">Finish
+                </button>
+              </div>
+
+            </nb-card-footer>
+          </nb-card>
+        </nb-step>
+      </nb-stepper>
+    </nb-card-body>
+  </nb-card>
+</ng-container>
+<ng-template #loading>
+  <div>
+    <nb-spinner size="giant" message="Loading survey" status="warning"></nb-spinner>
+  </div>
+
+</ng-template>

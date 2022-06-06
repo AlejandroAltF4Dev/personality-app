@@ -1,3 +1,6 @@
 <div class="flex h-full justify-center items-center">
-  <app-results></app-results>
+  <ng-container *ngIf="{score: score$ | async} as viewModel">
+    <app-results [score]="viewModel.score"></app-results>
+  </ng-container>
+
 </div>

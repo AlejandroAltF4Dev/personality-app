@@ -1,5 +1,11 @@
 <nb-layout center>
-  <nb-layout-header>Personality App</nb-layout-header>
+  <nb-layout-header>
+    <header class="flex justify-between items-center w-full">
+      <span>Personality App</span>
+      <ng-container *ngIf="name$ | async as name">
+        <nb-user [name]="name" title="Participant"></nb-user>
+      </ng-container>
+    </header></nb-layout-header>
   <nb-layout-footer>Personality app by AltF4Dev @ All rights reserved - 2022</nb-layout-footer>
   <nb-layout-column>
     <router-outlet></router-outlet>
