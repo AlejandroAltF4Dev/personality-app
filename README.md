@@ -1,7 +1,10 @@
+
 # PersonalityApp
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
-
+Stack: Angular/Nebular/Akita/TailwindCss
+Vercel deployment: [Personality App](https://personality-app.vercel.app/home).
+![img.png](img.png)
+![img_1.png](img_1.png)
+![img_2.png](img_2.png)
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
