@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SurveyPageComponent } from './survey-page.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('SurveyPageComponent', () => {
   let component: SurveyPageComponent;
@@ -8,9 +9,9 @@ describe('SurveyPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SurveyPageComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule],
+      declarations: [SurveyPageComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SurveyPageComponent);
     component = fixture.componentInstance;

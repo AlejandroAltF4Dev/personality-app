@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class SurveyStepperComponent implements OnInit {
   _survey?: Survey;
-  forms: any;
+  forms: FormArray;
 
   @Input()
   set survey(survey: Survey) {

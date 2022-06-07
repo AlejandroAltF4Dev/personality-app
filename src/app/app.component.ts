@@ -7,7 +7,7 @@ import { StoreQuery } from './state/store.query';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'personality-app';
+  title = 'Personality App';
   name$ = this.storeQuery.name$;
   constructor(private readonly storeQuery: StoreQuery) {}
 }
