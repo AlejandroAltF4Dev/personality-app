@@ -1,22 +1,17 @@
 import { Injectable } from '@angular/core';
-import { AppStore, StoreState } from './store.store';
+import { AppStore } from './store.store';
 
 @Injectable({ providedIn: 'root' })
 export class StoreService {
   constructor(private appStore: AppStore) {}
 
   updateName(name: string) {
-    this.appStore.update({ name });
+    this.appStore.saveName(name);
   }
 
   saveAnswers(answers: any[]) {
     const score = this.getScore(answers);
-    this.saveScore(score);
-  }
-  saveScore(score: number) {
-    this.appStore.update({
-      score,
-    });
+    this.appStore.saveScore(score);
   }
   private getScore(answers: any[]) {
     const values = answers.map((answer) => answer.value);

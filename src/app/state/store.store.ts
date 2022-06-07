@@ -19,4 +19,14 @@ export class AppStore extends Store<StoreState> {
   constructor() {
     super(createInitialState());
   }
+  saveScore(score: number) {
+    this.update({
+      score,
+    });
+  }
+  saveName(name: string) {
+    this.update({
+      name,
+    });
+  }
 }
